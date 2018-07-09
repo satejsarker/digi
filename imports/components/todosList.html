@@ -1,0 +1,23 @@
+<header>
+
+    <h1>Todo List</h1>
+
+</header>
+
+
+
+<ul>
+
+    <li ng-repeat="task in $ctrl.tasks">
+
+        {{task.text}}
+
+    </li>
+
+
+</ul>
+<ul >
+    <li ng-repeat="t in $ctrl.value">
+        {{$index}}
+    </li>
+</ul>

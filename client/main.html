@@ -99,21 +99,29 @@
                                   <div class="card-image waves-effect waves-block waves-light">
                                     <img class="activator" style="max-height: 150px" src="{{all.defaultHeaderpath }}">
                                   </div>
-                                  <div class="card-content " style="max-height: 100px">
+                                  <div class="card-content " style="max-height: 100px; padding-top: 4px">
                                       <span > <img src="{{all.ResturantLogo}}" alt="" width="25" height="25" class="circle responsive-img">&nbsp; {{all.ResturantName | cut:true:18:' ...' }}</span>
                                       <p>
-                                          ({{all.cusines_name_alllist}})
+                                          ({{all.cusines_name_alllist | cut:true:20:' ...' }})
+                                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                          {{all.milesDistance}} mi. <img  ng-if="all.halal" src=" https://image.freepik.com/free-vector/muslim-traditional-halal-food-icon-vector-badges-logo-tag-and-label-suitable-for-bann_1347-248.jpg" alt="" width="30" height="30" class="circle responsive-img">
                                       </p>
+                                      
+                                     
+                                 
+                                          
+                                      
                                       <span class="fa fa-star checked"></span>
                                       <span class="fa fa-star checked"></span>
                                       <span class="fa fa-star checked"></span>
                                       <span class="fa fa-star checked"></span>
                                       <span class="fa fa-star"></span> ({{all.TotalFeedback}})
+                                      
+                                      <span>
+                                        min.oder: $ {{all.minimum_order_value}}
+                                      </span>
                                   </div>
-                                  <div class="card-reveal">
-                                    <span >{{all.ResturantName}}</span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                  </div>
+                                 
                                 </div> 
                           </div>
                         

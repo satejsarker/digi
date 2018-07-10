@@ -12,27 +12,36 @@ class TodosListCtrl {
     
     constructor() {
 
-        HTTP.get('http://77.68.80.27:4010/marketplaceapi/landingrestaurantlist?&lat=51.7354&long=-0.315091&pageindex=1&pagesize=30', { /* options */ }, (error, res) => {
-            if(error) throw error;        
-        // this.value = (res.data.data);
-        // console.log(this.value)
-        this.tasks = [{
+        Meteor.publish('all',function(){
+            return all({
+               data: HTTP.get('http://77.68.80.27:4010/marketplaceapi/landingrestaurantlist?&lat=51.7354&long=-0.315091&pageindex=1&pagesize=30', { /* options */ }, (error, res) => {
+                    if(error) throw error;  
+                    this.value=res.data.data;      
+                    this.all=this.value.takingorders;
+                    
+                
+                    }),
+            })
+           
+               
+    
+        })
 
-            text: 'This is task 1'
+                this.all=Meteor.subscribe('all')
 
-        }, {
+            this.tasks = [{
 
-            text: 'This is task 2'
-
-        }, {
-
-            text: 'This is task 3'
-
-        }];
-            }),
-
-
-            
+                text: 'This is task 1'
+    
+            }, {
+    
+                text: 'This is task 2'
+    
+            }, {
+    
+                text: 'This is task 3'
+    
+            }];
 
 
             

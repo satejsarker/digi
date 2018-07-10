@@ -1,3 +1,3 @@
 # digitech assistment 
-# Very Minimal way to represent remote data with Meteor 
+# Very Minimal way to represent  the remote data with Meteor 
 #

@@ -4,6 +4,9 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
+ .checked {
+  color: orange;
+}
 .materialize-red {
   background-color: #e51c23 !important
 }

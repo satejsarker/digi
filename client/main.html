@@ -1,25 +1,28 @@
 <head>
 
-  <title>Resturant</title>
-
+  <title>Restaurants</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 
 <body>
 
-  <div ng-app="simple-todos">
-    <h2>
-      Resturant
-    </h2>
+  <div ng-app="simple-todos" align='center'>
+    <h4 style="margin-bottom: 0px">
+        Restaurants-D
+    </h4>
         <!-- <todos-list></todos-list> -->
 <div  ng-controller="test" >
+    <span  ng-if="!load"  style="margin-bottom: 30px;color: #666666;display: block">
+        Total restaurants : {{totalRes}}
+    </span>
   <div class="row">
-      <div class="col s6 border" style="border: 1px solid green;">  
+      <div class="col s6 border" style="border: 1px solid #ddd;">  
         <div class="section" style="max-height: 80vh; min-height: 80vh; overflow-y: scroll;margin-left: 5px" >
-          <h5>Preorders Resturent</h5>
+          <h5>Preorders restaurants</h5>
               <div class="col s12">
-                  <svg ng-if="load" style="margin-top: 180px; margin-left: 130px" class="lds-blocks" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><rect x="19" y="19" width="20" height="20" fill="#5f2a62">
+                  <svg ng-if="load" style="margin-top: 180px; margin-left: 190px" class="lds-blocks" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><rect x="19" y="19" width="20" height="20" fill="#5f2a62">
                       <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0s" calcMode="discrete"></animate>
                     </rect><rect x="40" y="19" width="20" height="20" fill="#5f2a62">
                       <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.125s" calcMode="discrete"></animate>
@@ -43,8 +46,17 @@
                               <img class="activator" src="{{all.defaultHeaderpath }}">
                             </div>
                             <div class="card-content">
-                              <span >{{all.ResturantName | cut:true:18:' ...' }}</span>
-                              <p><a href="#">This is a link</a></p>
+                             
+                                 <span > <img src="{{all.ResturantLogo}}" alt="" width="25" height="25" class="circle responsive-img">&nbsp; {{all.ResturantName | cut:true:18:' ...' }}</span>
+                                <p>
+                                    ({{all.cusines_name_alllist}})
+                                </p>
+                              
+                                <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span> ({{all.TotalFeedback}})
                             </div>
                             <div class="card-reveal">
                               <span >{{all.ResturantName}}</span>
@@ -52,20 +64,7 @@
                             </div>
                           </div> 
                     </div>
-                    <!-- <div class="col s4">
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                              <img class="activator" src="https://drop.ndtv.com/albums/COOKS/corngallery/creolespicedcornthumb_640x480.jpg">
-                            </div>
-                            <div class="card-content">
-                              <span class="card-title activator grey-text text-darken-4">Card Title</span>
-                              <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                          </div>  -->
+  
 
                           
                     </div>
@@ -73,19 +72,62 @@
               </div>
           
         </div>
-        <div class="col s6" style="border: 1px solid black;">
-            <div class="section" >
-                <h5>Section 2</h5>
-                <p>Stuff</p>
-              </div>
+        <div class="col s6" style="border: 1px solid #ddd;">
+            <div class="section" style="max-height: 80vh; min-height: 80vh; overflow-y: scroll;margin-left: 5px" >
+                <h5>Taking order restaurants</h5>
+                    <div class="col s12">
+                        <svg ng-if="load" style="margin-top: 180px; margin-left: 190px" class="lds-blocks" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><rect x="19" y="19" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0s" calcMode="discrete"></animate>
+                          </rect><rect x="40" y="19" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.125s" calcMode="discrete"></animate>
+                          </rect><rect x="61" y="19" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.25s" calcMode="discrete"></animate>
+                          </rect><rect x="19" y="40" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.875s" calcMode="discrete"></animate>
+                          </rect><rect x="61" y="40" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.375s" calcMode="discrete"></animate>
+                          </rect><rect x="19" y="61" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.75s" calcMode="discrete"></animate>
+                          </rect><rect x="40" y="61" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.625s" calcMode="discrete"></animate>
+                          </rect><rect x="61" y="61" width="20" height="20" fill="#5f2a62">
+                            <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.5s" calcMode="discrete"></animate>
+                          </rect></svg>
+                        <div class="row" ng-if="!load">
+                          <div class="col s6" ng-repeat="all in taking.listdata" >
+                              <div class="card">
+                                  <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" style="max-height: 150px" src="{{all.defaultHeaderpath }}">
+                                  </div>
+                                  <div class="card-content " style="max-height: 100px">
+                                      <span > <img src="{{all.ResturantLogo}}" alt="" width="25" height="25" class="circle responsive-img">&nbsp; {{all.ResturantName | cut:true:18:' ...' }}</span>
+                                      <p>
+                                          ({{all.cusines_name_alllist}})
+                                      </p>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star"></span> ({{all.TotalFeedback}})
+                                  </div>
+                                  <div class="card-reveal">
+                                    <span >{{all.ResturantName}}</span>
+                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                  </div>
+                                </div> 
+                          </div>
+                        
+      
+                                
+                          </div>
+                        </div>
+                    </div>
         </div>
       </div>
       
 
   </div>
-<!-- <div ng-repeat="all in allData.listdata" class="col s12">
- {{all.ResturantName}}
-   </div> -->
+
 </div>
 
   </div>

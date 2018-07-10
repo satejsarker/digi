@@ -46,8 +46,11 @@ angular.module('simple-todos', [
   }).then((res)=>{
       $scope.load=false;
       var allData = res.data.data;
+      $scope.totalRes=allData.totalrestaurants;
+      console.log(allData.totalrestaurants)
     console.log(res.data.data)
       $scope.allData = allData.preorders;
-      console.log($scope.allData.listdata)
+      $scope.taking=allData.takingorders;
+      console.log($scope.taking.listdata)
   })
 })

@@ -44,15 +44,27 @@
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
                               <img class="activator" src="{{all.defaultHeaderpath }}">
+                            
                             </div>
-                            <div class="card-content" style="height: 170px;">
-                             
-                                 <span > <img src="{{all.ResturantLogo}}" alt="" width="25" height="25" class="circle responsive-img">&nbsp; {{all.ResturantName | cut:true:18:' ...' }}</span>
+                            <div class="card-content" style="height: 200px;">
+                                  <div class="form-inline">
+                                 <span >
+                                <img src="{{all.ResturantLogo}}" alt="" width="25" height="25" class="circle responsive-img"</span>
+                                &nbsp; {{all.ResturantName | cut:true:18:' ...' }}
+
+                                  </div>
                                 <p>
-                                    ({{all.cusines_name_alllist }})
+                                    ({{all.cusines_name_alllist |cut:true:20:'..'}})
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                           {{all.milesDistance}} mi. <img  ng-if="all.halal" src=" https://image.freepik.com/free-vector/muslim-traditional-halal-food-icon-vector-badges-logo-tag-and-label-suitable-for-bann_1347-248.jpg" alt="HALAL" width="50" height="50" class="circle responsive-img">
-                                </p>
+                              <div ng-if="all.free_delivery">
+                                  <i class="fa fa-motorcycle" style="color: black;font-size: 20px" aria-hidden="true"></i>
+                              </div>
+                              <div ng-if="!all.free_delivery">
+                                <i class="fa fa-cutlery"  style="color: black;font-size: 20px" aria-hidden="true"></i>
+                              </div>
+
+                                        </p>
                               
                                 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -62,11 +74,12 @@
 <span>
   min.oder: $ {{all.minimum_order_value}}
 </span>
-                            </div>
-                            <div class="card-reveal">
-                              <span >{{all.ResturantName}}</span>
-                              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
+<div class="form-inline">
+  <button ng-show="all.table_reservation" class="btn"> Book table</button>
+  <button  class="btn btn-info" style="background-color: aquamarine;color: black"> View menu</button>
+</div>
+                      </div>
+                           
                           </div> 
                     </div>
   
@@ -125,6 +138,10 @@
                                       <span>
                                         min.oder: $ {{all.minimum_order_value}}
                                       </span>
+                                      <div class="form-inline">
+                                        <button ng-show="all.table_reservation" class="btn"> Book table</button>
+                                        <button class="btn btn-info" style="background-color: aquamarine;color: black"> View menu</button>
+                                      </div>
                                   </div>
                                  
                                 </div> 

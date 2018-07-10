@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import angularMeteor from 'angular-meteor';
 
-import todosList from '../imports/components/todosList';
+
 
 import { PreorderRes } from '../collections/preorder';
 
@@ -10,7 +10,6 @@ angular.module('simple-todos', [
 
   angularMeteor,
 
-  todosList.name
 
 ])
 .filter('cut', function () {

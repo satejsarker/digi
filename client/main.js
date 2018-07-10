@@ -4,7 +4,7 @@ import angularMeteor from 'angular-meteor';
 
 import todosList from '../imports/components/todosList';
 
-
+import { PreorderRes } from '../collections/preorder';
 
 angular.module('simple-todos', [
 
@@ -38,6 +38,13 @@ angular.module('simple-todos', [
   };
 }).controller('test',function($scope,$http){
   $scope.satej='satej sarker';
+  $scope.helpers({
+    preorderRes(){
+      return PreorderRes.find({});
+
+    }
+  })
+  console.log($scope.preorderRes)
   $scope.load=true;
   $http({
     "methord":'get',

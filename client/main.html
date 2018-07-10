@@ -40,7 +40,7 @@
                       <animate attributeName="fill" values="#a976c3;#5f2a62;#5f2a62" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.5s" calcMode="discrete"></animate>
                     </rect></svg>
                   <div class="row" ng-if="!load">
-                    <div class="col s6" ng-repeat="all in allData.listdata" >
+                    <div class="col s6" ng-repeat="all in preorderRes" >
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
                               <img class="activator" src="{{all.defaultHeaderpath }}">
